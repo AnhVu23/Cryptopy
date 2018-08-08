@@ -1,12 +1,19 @@
 import React, { Component } from 'react';
+import {Route, Switch} from 'react-router-dom';
+import Feeds from './containers/feeds';
+import Aux from './hocs/layout';
+import Layout from './hocs/layout';
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <Aux>
+        <Layout>
+          <Switch>
+            <Route path='/' component={Feeds}/>
+            <Route path='/' component={Feeds}/>
+          </Switch>
+        </Layout>
+      </Aux>
     );
   }
 }
