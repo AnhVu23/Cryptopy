@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 
 import Aux from '../react-aux';
-import NavigationItems from '../../components/navigation/navigationItems';
+import Toolbar from '../../components/navigation/toolbar';
 class Layout extends Component {
   render() {
     return (
       <Aux>
-        <NavigationItems/>
+        <Toolbar/>
       </Aux>
     )
   }

@@ -12,6 +12,13 @@ const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
 const getClientEnvironment = require('./env');
 const paths = require('./paths');
 
+const fs  = require('fs');
+
+const lessToJs = require('less-vars-to-js');
+const themeVariables = lessToJs(fs.readFileSync(path.join(__dirname, './ant-default-vars.less'), 'utf8'));
+
+
+
 // Webpack uses `publicPath` to determine where the app is being served from.
 // In development, we always serve from the root. This makes config easier.
 const publicPath = '/';
@@ -82,7 +89,7 @@ module.exports = {
     // https://github.com/facebookincubator/create-react-app/issues/290
     // `web` extension prefixes have been added for better support
     // for React Native Web.
-    extensions: ['.web.js', '.mjs', '.js', '.json', '.web.jsx', '.jsx'],
+    extensions: ['.web.js', '.mjs', '.js', '.json', '.web.jsx', '.jsx', '.less'],
     alias: {
       
       // Support React Native Web
@@ -114,8 +121,7 @@ module.exports = {
           {
             options: {
               formatter: eslintFormatter,
-              eslintPath: require.resolve('eslint'),
-              
+              eslintPath: require.resolve('eslint')
             },
             loader: require.resolve('eslint-loader'),
           },
@@ -144,7 +150,9 @@ module.exports = {
             include: paths.appSrc,
             loader: require.resolve('babel-loader'),
             options: {
-              
+              plugins: [
+                ['import', {libraryName: 'antd', style: true}]
+              ],
               // This is a feature of `babel-loader` for webpack (not Babel itself).
               // It enables caching results in ./node_modules/.cache/babel-loader/
               // directory for faster rebuilds.
@@ -223,10 +231,29 @@ module.exports = {
                 },
               },
               {
-                loader: require.resolve('sass-loader')
+                loader: require.resolve('sass-loader'),
+                options: {
+                  modules: true,
+                  localIndentName: '[name]_[local]_[hash:base64:5]'
+                }
               },
             ],
           },
+          {
+            test: /\.less$/,
+            use: [
+              {loader: "style-loader"},
+              {loader: "css-loader"},
+              {loader: "less-loader",
+                options: {
+                  javascriptEnabled: true,
+                  modifyVars: themeVariables,
+                  root: path.resolve(__dirname, './')
+                }
+              }
+            ]
+          },
+
           // "file" loader makes sure those assets get served by WebpackDevServer.
           // When you `import` an asset, you get its (virtual) filename.
           // In production, they would get copied to the `build` folder.

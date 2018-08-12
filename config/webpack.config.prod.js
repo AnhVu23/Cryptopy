@@ -12,6 +12,12 @@ const eslintFormatter = require('react-dev-utils/eslintFormatter');
 const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
 const paths = require('./paths');
 const getClientEnvironment = require('./env');
+const fs  = require('fs');
+
+const lessToJs = require('less-vars-to-js');
+const themeVariables = lessToJs(fs.readFileSync(path.join(__dirname, './ant-default-vars.less'), 'utf8'));
+
+
 
 // Webpack uses `publicPath` to determine where the app is being served from.
 // It requires a trailing slash, or the file assets will get an incorrect path.
@@ -88,7 +94,7 @@ module.exports = {
     // https://github.com/facebookincubator/create-react-app/issues/290
     // `web` extension prefixes have been added for better support
     // for React Native Web.
-    extensions: ['.web.js', '.mjs', '.js', '.json', '.web.jsx', '.jsx'],
+    extensions: ['.web.js', '.mjs', '.js', '.json', '.web.jsx', '.jsx', '.less'],
     alias: {
       
       // Support React Native Web
@@ -121,7 +127,10 @@ module.exports = {
             options: {
               formatter: eslintFormatter,
               eslintPath: require.resolve('eslint'),
-              
+              plugins: [
+                ['import', {libraryName: 'antd', style: true}]
+              ],
+
             },
             loader: require.resolve('eslint-loader'),
           },
@@ -149,7 +158,9 @@ module.exports = {
             include: paths.appSrc,
             loader: require.resolve('babel-loader'),
             options: {
-              
+              plugins: [
+                ['import', {libraryName: 'antd', style: true}]
+              ],
               compact: true,
             },
           },
@@ -247,10 +258,29 @@ module.exports = {
                 },
               },
               {
-                loader: require.resolve('sass-loader')
+                loader: require.resolve('sass-loader'),
+                options: {
+                  modules: true,
+                  localIndentName: '[name]_[local]_[hash:base64:5]'
+                }
               },
             ],
           },
+          {
+            test: /\.less$/,
+            use: [
+              {loader: "style-loader"},
+              {loader: "css-loader"},
+              {loader: "less-loader",
+                options: {
+                  javascriptEnabled: true,
+                  modifyVars: themeVariables,
+                  root: path.resolve(__dirname, './')
+                }
+              }
+            ]
+          },
+
           // "file" loader makes sure assets end up in the `build` folder.
           // When you `import` an asset, you get its filename.
           // This loader doesn't use a "test" so it will catch all modules

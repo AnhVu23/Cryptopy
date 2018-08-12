@@ -1,0 +1,52 @@
+.NavigationItems {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+  width: 100%;
+  align-items: baseline;
+  list-style: none;
+}
+
+.NavLeft {
+  display: flex;
+  flex: 1;
+  flex-flow: column;
+  align-items: center;
+  list-style: none;
+}
+
+.NavRight {
+  display: flex;
+  flex: 1;
+  flex-flow: column;
+  align-items: center;
+  list-style: none;
+}
+
+.Search {
+  display: flex;
+  flex: 1;
+  flex-basis: 50%;
+  align-items: center;
+}
+
+@media (min-width: 576px) {
+  .NavigationItems {
+    flex-flow: row;
+  }
+  .NavLeft {
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+  }
+
+  .NavRight {
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+  }
+
+  .Search {
+    flex-flow: row nowrap;
+    justify-content: center;
+  }
+}
+
