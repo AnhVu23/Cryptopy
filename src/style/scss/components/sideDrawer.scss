@@ -3,10 +3,12 @@
   @include hide;
 }
 
-.Nav {
-  display: flex;
+.SideDrawer {
+  position: relative;
+  z-index: 90;
 
 }
+
 @media only screen and (min-width: 576px) {
   .SideDrawer {
     @include hide;

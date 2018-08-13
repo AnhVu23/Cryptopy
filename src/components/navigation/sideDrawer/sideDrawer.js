@@ -3,30 +3,20 @@ import {Menu, Icon} from 'antd';
 import {Link} from 'react-router-dom';
 import classes from '../../../style/scss/components/sideDrawer.scss';
 import Aux from '../../../hocs/react-aux'
-import SideDrawerToggle from './sideDrawerToggle';
-import Search from '../../UI/search';
+import Backdrop from '../../UI/backdrop';
 class SideDrawer extends Component {
-  state = {
-    collapsed: true
-  };
-
-  toggleCollapsed = () => {
-    this.setState({
-      collapsed: !this.state.collapsed
-    });
-  };
 
   render() {
-    const menuClass = this.state.collapsed ? classes.Hide : null;
+    const menuClass = this.props.open ? null : classes.Hide;
     return (
-      <div className={classes.Nav}>
-        <div>
-          <SideDrawerToggle clicked={this.toggleCollapsed}
-                            collapsed={this.state.collapsed}/>
+      <Aux>
+        <Backdrop show={this.props.open}
+                  clicked={this.props.closed}/>
+        <nav className={classes.SideDrawer}>
           <Menu mode='inline'
                 theme='light'
                 className={[classes.SideDrawer, menuClass].join(' ')}>
-            <Menu.Item key='1'>
+            <Menu.Item key='1' >
               <Icon type='line-chart'/>
               <span>Charts</span>
               <Link to='/charts'/>
@@ -47,9 +37,8 @@ class SideDrawer extends Component {
               <Link to='/signUp'/>
             </Menu.Item>
           </Menu>
-        </div>
-        <Search/>
-      </div>
+        </nav>
+      </Aux>
     )
   }
 }
