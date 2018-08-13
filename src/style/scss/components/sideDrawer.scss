@@ -5,8 +5,8 @@
 
 .SideDrawer {
   position: relative;
-  z-index: 90;
-
+  z-index: 200;
+  top: 16px;
 }
 
 @media only screen and (min-width: 576px) {
