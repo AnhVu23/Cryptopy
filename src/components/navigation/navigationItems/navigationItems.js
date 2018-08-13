@@ -1,6 +1,6 @@
 import React from 'react';
 import classes from '../../../style/scss/components/navigationItems.scss';
-import Search from '../search';
+import Search from '../../UI/search';
 import NavigationItem from './navigationItem';
 
 const navigationItems = (props) => {
@@ -17,7 +17,7 @@ const navigationItems = (props) => {
       </div>
       <ul className={classes.NavRight}>
         <NavigationItem link='/login' exact>Login</NavigationItem>
-        <NavigationItem link='/signUp'>Sign Up</NavigationItem>
+        <NavigationItem link='/signUp'>Register</NavigationItem>
       </ul>
     </div>
 

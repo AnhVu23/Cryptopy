@@ -1,0 +1,7 @@
+@import "../abstracts/mixins";
+
+@media only screen and (min-width: 576px) {
+  .SideDrawerToggle {
+    @include hide;
+  }
+}
