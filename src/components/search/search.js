@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Input} from 'antd';
 
-import classes from '../../../style/scss/components/search.scss'
+import classes from '../../style/scss/components/search.scss'
 class Search extends Component {
 
   searchHandler(value) {

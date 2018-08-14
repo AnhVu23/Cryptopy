@@ -1,13 +1,15 @@
 import React from 'react';
+
 import classes from '../../../style/scss/components/navigationItems.scss';
-import Search from '../../UI/search';
+import Search from '../../search';
 import NavigationItem from './navigationItem';
+import Logo from '../../logo';
 
 const navigationItems = (props) => {
 
   return (
     <div className={classes.NavigationItems}>
-      <div>Logo</div>
+      <Logo/>
       <ul className={classes.NavLeft}>
         <NavigationItem link='/forum' exact className={classes.left}>Discussion</NavigationItem>
         <NavigationItem link='/charts' className={classes.left}>Charts</NavigationItem>

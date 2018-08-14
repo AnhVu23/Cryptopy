@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import Aux from '../react-aux';
 import Toolbar from '../../components/navigation/toolbar';
 import SideDrawer from '../../components/navigation/sideDrawer';
-import Backdrop from '../../components/UI/backdrop';
+
 class Layout extends Component {
   state = {
     showSideDrawer: false
@@ -13,11 +13,17 @@ class Layout extends Component {
     this.setState({
       showSideDrawer: false
     })
+
   };
 
   sideDrawerToggleHandler = () => {
     this.setState((prevState) => {
-      return {showSideDrawer: !prevState.showSideDrawer }
+      if(!prevState.showSideDrawer) {
+        return {showSideDrawer: !prevState.showSideDrawer }
+      }
+      else {
+        return {showSideDrawer: !prevState.showSideDrawer }
+      }
     })
   };
 

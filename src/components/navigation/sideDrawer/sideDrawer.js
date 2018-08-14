@@ -1,17 +1,16 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {Menu, Icon} from 'antd';
 import {Link} from 'react-router-dom';
 import classes from '../../../style/scss/components/sideDrawer.scss';
 import Aux from '../../../hocs/react-aux'
 import Backdrop from '../../UI/backdrop';
-class SideDrawer extends Component {
+const sideDrawer = (props) => {
 
-  render() {
-    const menuClass = this.props.open ? null : classes.Hide;
+    const menuClass = props.open ? null : classes.Hide;
     return (
       <Aux>
-        <Backdrop show={this.props.open}
-                  clicked={this.props.closed}/>
+        <Backdrop show={props.open}
+                  clicked={props.closed}/>
         <nav className={classes.SideDrawer}>
           <Menu mode='inline'
                 theme='light'
@@ -40,7 +39,6 @@ class SideDrawer extends Component {
         </nav>
       </Aux>
     )
-  }
 }
 
-export default SideDrawer;
+export default sideDrawer;
