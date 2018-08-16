@@ -1,19 +1,21 @@
 import React, { Component } from 'react';
 import {Route, Switch} from 'react-router-dom';
+
 import Feeds from './containers/feeds';
-import Aux from './hocs/layout';
 import Layout from './hocs/layout';
+import SignUpForm from './components/auth/signUpForm';
 class App extends Component {
   render() {
     return (
-      <Aux>
+      <div>
         <Layout>
           <Switch>
+            <Route path='/signUp' component={SignUpForm}/>
             <Route path='/' component={Feeds}/>
-            <Route path='/' component={Feeds}/>
+
           </Switch>
         </Layout>
-      </Aux>
+      </div>
     );
   }
 }

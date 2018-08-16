@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import Aux from '../react-aux';
 import Toolbar from '../../components/navigation/toolbar';
 import SideDrawer from '../../components/navigation/sideDrawer';
-
+import classes from '../../style/scss/components/layout.scss';
 class Layout extends Component {
   state = {
     showSideDrawer: false
@@ -34,7 +34,8 @@ class Layout extends Component {
                  collapsed={!this.state.showSideDrawer}/>
         <SideDrawer open={this.state.showSideDrawer}
                     closed={this.sideDrawerCloseHandler}/>
-        <main>
+        <main className={classes.Content}>
+          {this.props.children}
         </main>
       </Aux>
     )
