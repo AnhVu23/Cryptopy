@@ -51,11 +51,12 @@ export const signUp = (email, password) => {
     };
     axios.post(url, authData)
       .then(response => {
-        dispatch(signUpResponse(response.data.localId, response.data.idToken));
+        dispatch(signUpResponse(response.data));
         dispatch(checkAuthTimeout(response.data.expiresIn))
       })
       .catch(err => {
-        dispatch(signUpResponse(err.response.data.error))
+        console.log(err.response.data.error);
+        dispatch(signUpResponse(err))
       })
   }
 };

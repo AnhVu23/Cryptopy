@@ -2,13 +2,6 @@ import {handleActions} from 'redux-actions';
 import {combineReducers} from 'redux';
 import {signUpRequest, signUpResponse, signInRequest, signInResponse} from "../action/auth";
 
-const initialState = {
-  token: null,
-  userId: null,
-  error: null,
-  loading: false
-};
-
 const request = handleActions({
   [signUpRequest] (state) {
     return {
@@ -30,7 +23,7 @@ const request = handleActions({
       ...state, loading: false
     }
   }
-}, initialState);
+}, {loading: false});
 
 const response = handleActions({
   [signUpResponse] (state, action) {
@@ -47,16 +40,16 @@ const response = handleActions({
       userId: action.payload.localId
     }
   }
-}, initialState);
+}, {userId: null, token: null});
 
 const error = handleActions({
   [signUpResponse]: {
     next(){
       return null;
     },
-    throw(state, {payload}) {
+    throw(state, action) {
       return {
-        ...state, error: payload
+        ...state, error: action.payload.response.data.error.message
       }
     }
   },
@@ -64,15 +57,16 @@ const error = handleActions({
     next(){
       return null;
     },
-    throw(state, {payload}) {
+    throw(state, action) {
       return {
-        ...state, error: payload
+        ...state, error: action.payload.response.data.error.message
       }
     }
   },
-});
+}, {error: null});
 export default combineReducers({
   request,
   response,
   error
 })
+
