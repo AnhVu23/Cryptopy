@@ -30,8 +30,10 @@ class Layout extends Component {
   render() {
     return (
       <Aux>
-        <Toolbar drawerToggleClicked={this.sideDrawerToggleHandler}
-                 collapsed={!this.state.showSideDrawer}/>
+        <header>
+          <Toolbar drawerToggleClicked={this.sideDrawerToggleHandler}
+                   collapsed={!this.state.showSideDrawer}/>
+        </header>
         <SideDrawer open={this.state.showSideDrawer}
                     closed={this.sideDrawerCloseHandler}/>
         <main className={classes.Content}>

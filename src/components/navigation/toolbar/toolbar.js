@@ -7,7 +7,7 @@ import classes from '../../../style/scss/components/toolbar.scss';
 import Logo from '../../logo';
 const toolbar = (props) => {
   return (
-    <header className={classes.Toolbar}>
+    <div className={classes.Toolbar}>
       <div className={classes.MobileNav}>
         <Logo/>
         <Search/>
@@ -17,7 +17,7 @@ const toolbar = (props) => {
       <nav className={classes.Nav}>
         <NavigationItems/>
       </nav>
-    </header>
+    </div>
   )
 };
 

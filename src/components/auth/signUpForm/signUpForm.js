@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Form, Input, Tooltip, Icon, Select, Row, Col, Button, DatePicker} from 'antd';
+import {Form, Input, Tooltip, Icon, Select, Button, DatePicker} from 'antd';
 
 const FormItem = Form.Item;
 const Option = Select.Option;
@@ -12,7 +12,11 @@ class SignUpForm extends Component {
 
   submitHandler = (e) => {
     e.preventDefault();
-
+    this.props.form.validateFieldsAndScroll((err, values) => {
+      if (!err) {
+        console.log('Received values of form: ', values);
+      }
+    });
   };
 
   confirmBlurHandler = (e) => {
@@ -88,7 +92,7 @@ class SignUpForm extends Component {
             }, {
               validator: this.validateToNextPassword
             }, {
-              minLength: 6, message: 'Your password must contain at least 6 characters'
+              min: 6, message: 'Your password must contain at least 6 characters'
             }]
           })(
             <Input type='password'/>
@@ -123,8 +127,8 @@ class SignUpForm extends Component {
         <FormItem
           {...formItemLayout}
           label='Gender'>
-          {getFieldDecorator('gender', {})(
-            <Select defaultValue='male'>
+          {getFieldDecorator('gender', {initialValue: 'male'})(
+            <Select>
               <Option value='male'>Male</Option>
               <Option value='female'>Female</Option>
               <Option value='other'>Other</Option>
@@ -134,7 +138,9 @@ class SignUpForm extends Component {
         <FormItem
           {...formItemLayout}
           label='Birthday'>
-          {getFieldDecorator('birthday', {})(
+          {getFieldDecorator('birthday', {
+            rules: [{required: true, message: 'You must choose your birthday'
+          }]})(
             <DatePicker placeholder='Choose your birthday'></DatePicker>
           )}
 

@@ -1,6 +1,8 @@
 @import "../abstracts/variables";
 @import "../abstracts/mixins";
 .Toolbar {
+  position: fixed;
+  top: 0;
   width: 100%;
   box-sizing: border-box;
   background-color: $secondary-color;
