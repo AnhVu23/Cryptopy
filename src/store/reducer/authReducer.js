@@ -49,7 +49,7 @@ const error = handleActions({
     },
     throw(state, action) {
       return {
-        ...state, error: action.payload.response.data.error.message
+        ...state, message: action.payload.response.data.error.message
       }
     }
   },
@@ -59,11 +59,11 @@ const error = handleActions({
     },
     throw(state, action) {
       return {
-        ...state, error: action.payload.response.data.error.message
+        ...state, message: action.payload.response.data.error.message
       }
     }
   },
-}, {error: null});
+}, {message: null});
 export default combineReducers({
   request,
   response,

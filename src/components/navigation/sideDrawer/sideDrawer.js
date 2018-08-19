@@ -28,7 +28,7 @@ const sideDrawer = (props) => {
             <Menu.Item key='3'>
               <Icon type='login'/>
               <span>Login</span>
-              <Link to='/login'/>
+              <Link to='/signIn'/>
             </Menu.Item>
             <Menu.Item key='4'>
               <Icon type='user-add'/>

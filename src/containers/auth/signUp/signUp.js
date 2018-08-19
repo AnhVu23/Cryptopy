@@ -1,10 +1,7 @@
-import React, {Component} from 'react';
 import {connect} from 'react-redux';
+
 import SignUpForm from '../../../components/auth/signUpForm';
 import * as actions from '../../../store/action';
-class SignUp extends Component {
-
-}
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -13,7 +10,9 @@ const mapDispatchToProps = dispatch => {
 };
 
 const mapStateToProps = state => {
+  return {
 
+  }
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(SignUpForm)

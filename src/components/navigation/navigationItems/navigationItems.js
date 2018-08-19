@@ -18,7 +18,7 @@ const navigationItems = (props) => {
           <Search/>
       </div>
       <ul className={classes.NavRight}>
-        <NavigationItem link='/login' exact>Login</NavigationItem>
+        <NavigationItem link='/signIn' exact>Login</NavigationItem>
         <NavigationItem link='/signUp'>Register</NavigationItem>
       </ul>
     </div>

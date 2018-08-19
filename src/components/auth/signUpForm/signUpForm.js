@@ -6,16 +6,14 @@ const Option = Select.Option;
 
 class SignUpForm extends Component {
   state = {
-    confirmDirty: false,
-    autoCompleteResult: []
+    confirmDirty: false
   };
 
   submitHandler = (e) => {
     e.preventDefault();
     this.props.form.validateFieldsAndScroll((err, values) => {
       if (!err) {
-        const email = this.props.form.getFieldValue('email');
-        const password = this.props.form.getFieldValue('password');
+        const {email, password} = values;
         this.props.signUp(email, password);
       }
     });
@@ -73,7 +71,7 @@ class SignUpForm extends Component {
     };
 
     return (
-      <Form onSubmit={this.submitHandler}>
+      <Form onSubmit={this.submitHandler.bind(this)}>
         <FormItem {...formItemLayout}
                   label='Email'>
           {getFieldDecorator('email', {
@@ -155,6 +153,6 @@ class SignUpForm extends Component {
   }
 }
 
-const WrappedRegistrationForm = Form.create()(SignUpForm)
+const WrappedRegistrationForm = Form.create()(SignUpForm);
 
 export default WrappedRegistrationForm;
