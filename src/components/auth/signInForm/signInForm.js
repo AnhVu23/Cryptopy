@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 import { Form, Icon, Input, Button, Checkbox } from 'antd';
+import {Link} from 'react-router-dom';
 
 const FormItem = Form.Item;
+
 class SignInForm extends Component {
   submitHandler(e) {
     e.preventDefault();
@@ -47,7 +49,8 @@ class SignInForm extends Component {
               required: true, message: 'Please input your Email!'
             }]
           })(
-            <Input/>
+            <Input prefix={<Icon type='user' style={{color: 'rgba(0,0,0,.25'}}/>}
+                   placeholder='Email'/>
           )}
         </FormItem>
         <FormItem {...formItemLayout}
@@ -57,11 +60,21 @@ class SignInForm extends Component {
               required: true, message: 'Please input your password'
             }]
           })(
-            <Input type='password'/>
+            <Input type='password'
+                   prefix={<Icon type='lock' style={{color: 'rgba(0,0,0,.25)'}}/>}
+                   placeholder='Password'/>
           )}
         </FormItem>
         <FormItem {...tailFormItemLayout}>
-          <Button type='primary'  htmlType='submit'>Login</Button>
+            {getFieldDecorator('remember', {
+              valuePropName: 'checked',
+                initialValue: true
+            })(
+                <Checkbox>Remember me</Checkbox>
+            )}
+            <a style={{float: 'right'}} href=''>Forgot password</a>
+          <Button type='primary'  htmlType='submit' style={{width: '100%'}}>Login</Button>
+            Or <Link to='/signUp'>Register Now!</Link>
         </FormItem>
       </Form>
     )
