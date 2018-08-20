@@ -32,11 +32,11 @@ export const signIn = (email, password) => {
     };
     axios.post(url, authData)
       .then(response => {
-        dispatch(signInResponse(response.data.localId, response.data.idToken))
+        dispatch(signInResponse(response.data))
         dispatch(checkAuthTimeout(response.data.expiresIn))
       })
       .catch(err => {
-        dispatch(signInResponse(err.response.data.error))
+        dispatch(signInResponse(err))
       })
   }
 };

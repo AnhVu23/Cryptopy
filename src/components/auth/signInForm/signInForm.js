@@ -18,26 +18,36 @@ class SignInForm extends Component {
     const { getFieldDecorator } = this.props.form;
     const formItemLayout = {
       labelCol: {
-        xs: {span: 24},
+        xs: {
+          span: 22,
+          offset: 1},
         sm: {span: 8}
       },
       wrapperCol: {
-        xs: {span: 24},
-        sm: {span: 16}
+        xs: {
+          span: 22,
+          offset: 1},
+        sm: {span: 8}
       }
     };
     const tailFormItemLayout = {
       wrapperCol: {
         xs: {
-          span: 24,
-          offset: 0
+          span: 22,
+          offset: 1
         },
         sm: {
-          span: 16,
-          offset: 8
+          span: 8,
+          offset: 10
         }
       }
     };
+    let errorMessage = null;
+    if(this.props.error) {
+      errorMessage = (
+        <p style={{color: '#f5222d'}}>{this.props.error.message}</p>
+      )
+    }
     return (
       <Form onSubmit={this.submitHandler.bind(this)}>
         <FormItem {...formItemLayout}
@@ -64,6 +74,7 @@ class SignInForm extends Component {
                    prefix={<Icon type='lock' style={{color: 'rgba(0,0,0,.25)'}}/>}
                    placeholder='Password'/>
           )}
+          {errorMessage}
         </FormItem>
         <FormItem {...tailFormItemLayout}>
             {getFieldDecorator('remember', {

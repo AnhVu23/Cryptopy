@@ -48,28 +48,37 @@ class SignUpForm extends Component {
 
     const formItemLayout = {
       labelCol: {
-        xs: {span: 24},
+        xs: {
+          span: 22,
+          offset: 1},
         sm: {span: 8}
       },
       wrapperCol: {
-        xs: {span: 24},
-        sm: {span: 16}
+        xs: {
+          span: 22,
+          offset: 1},
+        sm: {span: 8}
       }
     };
 
     const tailFormItemLayout = {
       wrapperCol: {
         xs: {
-          span: 24,
-          offset: 0
+          span: 22,
+          offset: 1
         },
         sm: {
-          span: 16,
-          offset: 8
+          span: 8,
+          offset: 10
         }
       }
     };
-
+    let errorMessage = null;
+    if(this.props.error) {
+      errorMessage = (
+        <p style={{color: '#f5222d'}}>{this.props.error.message}</p>
+      )
+    }
     return (
       <Form onSubmit={this.submitHandler.bind(this)}>
         <FormItem {...formItemLayout}
@@ -126,6 +135,16 @@ class SignUpForm extends Component {
         </FormItem>
         <FormItem
           {...formItemLayout}
+          label='Birthday'>
+          {getFieldDecorator('birthday', {
+            rules: [{required: true, message: 'You must choose your birthday'
+            }]})(
+            <DatePicker placeholder='Choose your birthday'></DatePicker>
+          )}
+
+        </FormItem>
+        <FormItem
+          {...formItemLayout}
           label='Gender'>
           {getFieldDecorator('gender', {initialValue: 'male'})(
             <Select>
@@ -134,16 +153,7 @@ class SignUpForm extends Component {
               <Option value='other'>Other</Option>
             </Select>
           )}
-        </FormItem>
-        <FormItem
-          {...formItemLayout}
-          label='Birthday'>
-          {getFieldDecorator('birthday', {
-            rules: [{required: true, message: 'You must choose your birthday'
-          }]})(
-            <DatePicker placeholder='Choose your birthday'></DatePicker>
-          )}
-
+          {errorMessage}
         </FormItem>
         <FormItem {...tailFormItemLayout}>
           <Button type='primary'  htmlType='submit'>Register</Button>

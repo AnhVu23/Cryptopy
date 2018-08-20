@@ -10,14 +10,12 @@ const navigationItems = (props) => {
   return (
     <div className={classes.NavigationItems}>
       <Logo/>
-      <ul className={classes.NavLeft}>
-        <NavigationItem link='/forum' exact className={classes.left}>Discussion</NavigationItem>
-        <NavigationItem link='/charts' className={classes.left}>Charts</NavigationItem>
-      </ul>
       <div className={classes.Search}>
           <Search/>
       </div>
       <ul className={classes.NavRight}>
+        <NavigationItem link='/forum' exact>Discussion</NavigationItem>
+        <NavigationItem link='/charts'>Charts</NavigationItem>
         <NavigationItem link='/signIn' exact>Login</NavigationItem>
         <NavigationItem link='/signUp'>Register</NavigationItem>
       </ul>
