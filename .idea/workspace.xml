@@ -4,13 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/src/components/navigation/sideDrawer/sideDrawer.js" line="38" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91022eed-c6c9-4e26-9476-3a6a2c124684" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/auth/signInForm/signInForm.js" afterPath="$PROJECT_DIR$/src/components/auth/signInForm/signInForm.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/auth/signUpForm/signUpForm.js" afterPath="$PROJECT_DIR$/src/components/auth/signUpForm/signUpForm.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/navigation/navigationItems/navigationItems.js" afterPath="$PROJECT_DIR$/src/components/navigation/navigationItems/navigationItems.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/store/action/auth.js" afterPath="$PROJECT_DIR$/src/store/action/auth.js" />
-    </list>
+    <list default="true" id="91022eed-c6c9-4e26-9476-3a6a2c124684" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -112,7 +106,7 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="676" />
     <option name="y" value="87" />
     <option name="width" value="848" />
@@ -259,15 +253,15 @@
       <workItem from="1533973172153" duration="13508000" />
       <workItem from="1534024379811" duration="31397000" />
       <workItem from="1534406466583" duration="8091000" />
-      <workItem from="1534519693007" duration="34771000" />
+      <workItem from="1534519693007" duration="34872000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="151311000" />
+    <option name="totallyTimeSpent" value="151412000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="676" y="87" width="848" height="1070" extended-state="0" />
+    <frame x="676" y="87" width="848" height="1070" extended-state="1" />
     <layout>
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30493826" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
