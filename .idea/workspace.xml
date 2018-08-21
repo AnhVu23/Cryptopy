@@ -5,10 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="91022eed-c6c9-4e26-9476-3a6a2c124684" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/auth/signUpForm/signUpForm.js" afterPath="$PROJECT_DIR$/src/components/auth/signUpForm/signUpForm.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/containers/auth/signIn/signIn.js" afterPath="$PROJECT_DIR$/src/containers/auth/signIn/signIn.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/containers/auth/signUp/signUp.js" afterPath="$PROJECT_DIR$/src/containers/auth/signUp/signUp.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/containers/auth/signOut/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/containers/auth/signOut/signOut.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App.js" afterPath="$PROJECT_DIR$/src/App.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/navigation/navigationItems/navigationItem/navigationItem.js" afterPath="$PROJECT_DIR$/src/components/navigation/navigationItems/navigationItem/navigationItem.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/store/action/actionTypes.js" afterPath="$PROJECT_DIR$/src/store/action/actionTypes.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/store/action/auth.js" afterPath="$PROJECT_DIR$/src/store/action/auth.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/store/action/index.js" afterPath="$PROJECT_DIR$/src/store/action/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/store/reducer/authReducer.js" afterPath="$PROJECT_DIR$/src/store/reducer/authReducer.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -22,11 +27,33 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="signUpForm.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/components/auth/signUpForm/signUpForm.js">
+      <file leaf-file-name="auth.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/store/action/auth.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="19" column="50" lean-forward="false" selection-start-line="19" selection-start-column="50" selection-end-line="19" selection-end-column="50" />
+            <state relative-caret-position="153">
+              <caret line="14" column="22" lean-forward="false" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="authReducer.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/store/reducer/authReducer.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="362">
+              <caret line="46" column="6" lean-forward="false" selection-start-line="46" selection-start-column="6" selection-end-line="46" selection-end-column="6" />
+              <folding>
+                <element signature="e#0#44#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="signOut.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/containers/auth/signOut/signOut.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="20" column="44" lean-forward="false" selection-start-line="20" selection-start-column="44" selection-end-line="20" selection-end-column="44" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -34,11 +61,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="signUp.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/containers/auth/signUp/signUp.js">
+      <file leaf-file-name="App.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="7" column="90" lean-forward="false" selection-start-line="7" selection-start-column="90" selection-end-line="7" selection-end-column="90" />
+            <state relative-caret-position="272">
+              <caret line="16" column="53" lean-forward="false" selection-start-line="16" selection-start-column="53" selection-end-line="16" selection-end-column="53" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/store/action/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="31" lean-forward="false" selection-start-line="0" selection-start-column="31" selection-end-line="0" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -57,10 +96,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/components/navigation/sideDrawer/sideDrawerToggle/package.json" />
-        <option value="$PROJECT_DIR$/src/components/navigation/sideDrawer/sideDrawerToggle/sideDrawerToggle.js" />
         <option value="$PROJECT_DIR$/config/ant-default-vars.less" />
-        <option value="$PROJECT_DIR$/src/components/navigation/navigationItems/navigationItem/navigationItem.js" />
         <option value="$PROJECT_DIR$/src/components/UI/package.json" />
         <option value="$PROJECT_DIR$/src/components/UI/backdrop/backdrop.js" />
         <option value="$PROJECT_DIR$/src/style/scss/components/backdrop.scss" />
@@ -81,14 +117,10 @@
         <option value="$PROJECT_DIR$/src/style/scss/components/layout.scss" />
         <option value="$PROJECT_DIR$/src/style/scss/components/toolbar.scss" />
         <option value="$PROJECT_DIR$/src/axios/axios.js" />
-        <option value="$PROJECT_DIR$/src/store/action/actionTypes.js" />
-        <option value="$PROJECT_DIR$/src/store/action/index.js" />
         <option value="$PROJECT_DIR$/.babelrc" />
         <option value="$PROJECT_DIR$/src/hocs/errorHandler/package.json" />
         <option value="$PROJECT_DIR$/src/hocs/errorHandler/errorHandler.js" />
         <option value="$PROJECT_DIR$/src/components/auth/signInForm/package.json" />
-        <option value="$PROJECT_DIR$/src/App.js" />
-        <option value="$PROJECT_DIR$/src/store/reducer/authReducer.js" />
         <option value="$PROJECT_DIR$/src/components/posts/post/package.json" />
         <option value="$PROJECT_DIR$/src/components/posts/posts.js" />
         <option value="$PROJECT_DIR$/src/components/posts/package.json" />
@@ -105,9 +137,16 @@
         <option value="$PROJECT_DIR$/src/components/navigation/sideDrawer/sideDrawer.js" />
         <option value="$PROJECT_DIR$/src/components/auth/signInForm/signInForm.js" />
         <option value="$PROJECT_DIR$/src/containers/auth/signIn/signIn.js" />
-        <option value="$PROJECT_DIR$/src/store/action/auth.js" />
         <option value="$PROJECT_DIR$/src/containers/auth/signUp/signUp.js" />
         <option value="$PROJECT_DIR$/src/components/auth/signUpForm/signUpForm.js" />
+        <option value="$PROJECT_DIR$/src/components/navigation/navigationItems/navigationItem/navigationItem.js" />
+        <option value="$PROJECT_DIR$/src/store/action/actionTypes.js" />
+        <option value="$PROJECT_DIR$/src/store/action/auth.js" />
+        <option value="$PROJECT_DIR$/src/store/action/index.js" />
+        <option value="$PROJECT_DIR$/src/store/reducer/authReducer.js" />
+        <option value="$PROJECT_DIR$/src/containers/auth/signOut/package.json" />
+        <option value="$PROJECT_DIR$/src/App.js" />
+        <option value="$PROJECT_DIR$/src/containers/auth/signOut/signOut.js" />
       </list>
     </option>
   </component>
@@ -135,10 +174,10 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="549" />
-    <option name="y" value="30" />
-    <option name="width" value="848" />
-    <option name="height" value="797" />
+    <option name="x" value="844" />
+    <option name="y" value="151" />
+    <option name="width" value="854" />
+    <option name="height" value="1017" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -207,37 +246,6 @@
               <item name="Cryptopy" type="b2602c69:ProjectViewProjectNode" />
               <item name="Cryptopy" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="navigation" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Cryptopy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Cryptopy" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="navigation" type="462c0819:PsiDirectoryNode" />
-              <item name="navigationItems" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Cryptopy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Cryptopy" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="navigation" type="462c0819:PsiDirectoryNode" />
-              <item name="sideDrawer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Cryptopy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Cryptopy" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="navigation" type="462c0819:PsiDirectoryNode" />
-              <item name="toolbar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Cryptopy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Cryptopy" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="containers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -253,41 +261,13 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="containers" type="462c0819:PsiDirectoryNode" />
               <item name="auth" type="462c0819:PsiDirectoryNode" />
-              <item name="signIn" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Cryptopy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Cryptopy" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="containers" type="462c0819:PsiDirectoryNode" />
-              <item name="auth" type="462c0819:PsiDirectoryNode" />
-              <item name="signUp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Cryptopy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Cryptopy" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="hocs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Cryptopy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Cryptopy" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="hocs" type="462c0819:PsiDirectoryNode" />
-              <item name="layout" type="462c0819:PsiDirectoryNode" />
+              <item name="signOut" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Cryptopy" type="b2602c69:ProjectViewProjectNode" />
               <item name="Cryptopy" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="store" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Cryptopy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Cryptopy" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="store" type="462c0819:PsiDirectoryNode" />
-              <item name="action" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Cryptopy" type="b2602c69:ProjectViewProjectNode" />
@@ -309,14 +289,6 @@
               <item name="style" type="462c0819:PsiDirectoryNode" />
               <item name="scss" type="462c0819:PsiDirectoryNode" />
               <item name="abstracts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Cryptopy" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Cryptopy" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="style" type="462c0819:PsiDirectoryNode" />
-              <item name="scss" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -384,12 +356,12 @@
       <workItem from="1534519693007" duration="34872000" />
       <workItem from="1534796652468" duration="103000" />
       <workItem from="1534835334750" duration="737000" />
-      <workItem from="1534877093265" duration="1868000" />
+      <workItem from="1534877093265" duration="3367000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="158711000" />
+    <option name="totallyTimeSpent" value="160210000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
@@ -427,27 +399,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/components/navigation/navigationItems/navigationItem/navigationItem.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/UI/backdrop/backdrop.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="24" lean-forward="true" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/style/scss/components/backdrop.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="14" lean-forward="true" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/style/scss/components/sideDrawerToggle.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -563,13 +514,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/store/action/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="46" lean-forward="true" selection-start-line="0" selection-start-column="46" selection-end-line="0" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.babelrc">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -585,13 +529,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/hocs/errorHandler/package.json" />
-    <entry file="file://$PROJECT_DIR$/src/store/action/actionTypes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="40" lean-forward="false" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/auth/signInForm.js" />
     <entry file="file://$PROJECT_DIR$/src/hocs/errorHandler/errorHandler.js" />
     <entry file="file://$PROJECT_DIR$/src/components/auth/signInForm/package.json">
@@ -622,16 +559,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="11" column="16" lean-forward="false" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#41#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/posts/posts.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
@@ -639,14 +566,6 @@
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/store/reducer/authReducer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="590">
-          <caret line="55" column="21" lean-forward="false" selection-start-line="55" selection-start-column="21" selection-end-line="55" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -736,14 +655,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/store/action/auth.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
-          <caret line="56" column="26" lean-forward="false" selection-start-line="56" selection-start-column="26" selection-end-line="56" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/auth/signIn/signIn.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -762,6 +673,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/navigation/navigationItems/navigationItem/navigationItem.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="53" lean-forward="false" selection-start-line="9" selection-start-column="53" selection-end-line="9" selection-end-column="53" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/auth/signUpForm/signUpForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="19" column="50" lean-forward="false" selection-start-line="19" selection-start-column="50" selection-end-line="19" selection-end-column="50" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/auth/signUp/signUp.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -770,10 +701,62 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/auth/signUpForm/signUpForm.js">
+    <entry file="file://$PROJECT_DIR$/src/store/action/actionTypes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="19" column="50" lean-forward="false" selection-start-line="19" selection-start-column="50" selection-end-line="19" selection-end-column="50" />
+        <state relative-caret-position="68">
+          <caret line="4" column="33" lean-forward="false" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/store/action/auth.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="14" column="22" lean-forward="false" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/store/action/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="31" lean-forward="false" selection-start-line="0" selection-start-column="31" selection-end-line="0" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/store/reducer/authReducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="362">
+          <caret line="46" column="6" lean-forward="false" selection-start-line="46" selection-start-column="6" selection-end-line="46" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/auth/signOut/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="21" lean-forward="false" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="53" lean-forward="false" selection-start-line="16" selection-start-column="53" selection-end-line="16" selection-end-column="53" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/auth/signOut/signOut.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="44" lean-forward="false" selection-start-line="20" selection-start-column="44" selection-end-line="20" selection-end-column="44" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>

@@ -1,6 +1,6 @@
 import {handleActions} from 'redux-actions';
 import {combineReducers} from 'redux';
-import {signUpRequest, signUpResponse, signInRequest, signInResponse} from "../action/auth";
+import {signUpRequest, signUpResponse, signInRequest, signInResponse, signOut} from "../action/auth";
 
 const request = handleActions({
   [signUpRequest] (state) {
@@ -38,6 +38,13 @@ const response = handleActions({
       ...state,
       token: action.payload.idToken,
       userId: action.payload.localId
+    }
+  },
+  [signOut] (state, action) {
+    return {
+      ...state,
+      token: null,
+      userId: null
     }
   }
 }, {userId: null, token: null});

@@ -7,20 +7,21 @@ export const {
   signUpResponse,
   signInRequest,
   signInResponse,
-  logout} = createActions(
+  signOut} = createActions(
     actionTypes.SIGN_UP_REQUEST,
   actionTypes.SIGN_UP_RESPONSE,
   actionTypes.SIGN_IN_REQUEST,
   actionTypes.SIGN_IN_RESPONSE,
-  actionTypes.LOG_OUT);
+  actionTypes.SIGN_OUT);
 
 export const checkAuthTimeout = (expirationTime) => {
   return dispatch => {
     setTimeout(() => {
-      dispatch(logout());
+      dispatch(signOut());
     }, expirationTime * 1000)
   }
 };
+
 export const signIn = (email, password, history) => {
   return dispatch => {
     dispatch(signInRequest());
