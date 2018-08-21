@@ -34,13 +34,14 @@ export const signIn = (email, password, history) => {
       .then(response => {
         dispatch(signInResponse(response.data))
         dispatch(checkAuthTimeout(response.data.expiresIn))
+        history.push('/');
       })
       .catch(err => {
         dispatch(signInResponse(err))
       })
   }
 };
-export const signUp = (email, password) => {
+export const signUp = (email, password, history) => {
   return dispatch => {
     dispatch(signUpRequest());
     const url = 'https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=AIzaSyBeu1l_YzvzhHg_373vtCGupOIaCj4myfg';
@@ -53,6 +54,7 @@ export const signUp = (email, password) => {
       .then(response => {
         dispatch(signUpResponse(response.data));
         dispatch(checkAuthTimeout(response.data.expiresIn))
+        history.push('/');
       })
       .catch(err => {
         dispatch(signUpResponse(err))

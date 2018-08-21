@@ -5,7 +5,7 @@ import * as actions from '../../../store/action';
 
 const mapDispatchToProps = dispatch => {
   return {
-    signUp: (email, password) => dispatch(actions.signUp(email, password))
+    signUp: (email, password, history) => dispatch(actions.signUp(email, password, history))
   }
 };
 
