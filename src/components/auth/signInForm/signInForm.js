@@ -10,7 +10,8 @@ class SignInForm extends Component {
     this.props.form.validateFieldsAndScroll((err, values) => {
       if (!err) {
         const {email, password} = values;
-        this.props.signIn(email, password);
+        const {history} = this.props;
+        this.props.signIn(email, password, history);
       }
     });
   }

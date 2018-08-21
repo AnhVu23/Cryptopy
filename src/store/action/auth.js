@@ -21,7 +21,7 @@ export const checkAuthTimeout = (expirationTime) => {
     }, expirationTime * 1000)
   }
 };
-export const signIn = (email, password) => {
+export const signIn = (email, password, history) => {
   return dispatch => {
     dispatch(signInRequest());
     const url = 'https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=AIzaSyBeu1l_YzvzhHg_373vtCGupOIaCj4myfg';
