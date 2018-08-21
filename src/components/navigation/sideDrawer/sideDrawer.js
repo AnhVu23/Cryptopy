@@ -5,7 +5,27 @@ import classes from '../../../style/scss/components/sideDrawer.scss';
 import Aux from '../../../hocs/react-aux'
 import Backdrop from '../../UI/backdrop';
 const sideDrawer = (props) => {
-
+    const signInNav = (
+      <Menu.Item key='signIn'>
+        <Icon type='login'/>
+        <span>Login</span>
+        <Link to='/signIn'/>
+      </Menu.Item>
+    );
+    const signUpNav = (
+      <Menu.Item key='signUp'>
+        <Icon type='user-add'/>
+        <span>Register</span>
+        <Link to='/signUp'/>
+      </Menu.Item>
+    );
+    const signOutNav = (
+      <Menu.Item key='signOut'>
+        <Icon type='logout'/>
+        <span>Log Out</span>
+        <Link to='/signOut'/>
+      </Menu.Item>
+    );
     const menuClass = props.open ? null : classes.Hide;
     return (
       <Aux>
@@ -16,26 +36,18 @@ const sideDrawer = (props) => {
                 theme='light'
                 className={[classes.SideDrawer, menuClass].join(' ')}
                 onClick={props.closed}>
-            <Menu.Item key='1' >
+            <Menu.Item key='charts' >
               <Icon type='line-chart'/>
               <span>Charts</span>
               <Link to='/charts'/>
             </Menu.Item>
-            <Menu.Item key='2'>
+            <Menu.Item key='discussion'>
               <Icon type='team'/>
               <span>Discussion</span>
               <Link to='/forum'/>
             </Menu.Item>
-            <Menu.Item key='3'>
-              <Icon type='login'/>
-              <span>Login</span>
-              <Link to='/signIn'/>
-            </Menu.Item>
-            <Menu.Item key='4'>
-              <Icon type='user-add'/>
-              <span>Register</span>
-              <Link to='/signUp'/>
-            </Menu.Item>
+            {props.isAuthenticated ? null : signInNav}
+            {props.isAuthenticated ? signOutNav : signUpNav}
           </Menu>
         </nav>
       </Aux>

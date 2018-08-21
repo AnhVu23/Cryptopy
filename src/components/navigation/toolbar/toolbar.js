@@ -15,7 +15,7 @@ const toolbar = (props) => {
                           collapsed={props.collapsed}/>
       </div>
       <nav className={classes.Nav}>
-        <NavigationItems/>
+        <NavigationItems isAuthenticated={props.isAuthenticated}/>
       </nav>
     </div>
   )

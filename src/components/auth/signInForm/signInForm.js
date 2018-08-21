@@ -38,7 +38,7 @@ class SignInForm extends Component {
         },
         sm: {
           span: 8,
-          offset: 10
+          offset: 8
         }
       }
     };
