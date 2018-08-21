@@ -14,7 +14,8 @@ const sideDrawer = (props) => {
         <nav className={classes.SideDrawer}>
           <Menu mode='inline'
                 theme='light'
-                className={[classes.SideDrawer, menuClass].join(' ')}>
+                className={[classes.SideDrawer, menuClass].join(' ')}
+                onClick={props.closed}>
             <Menu.Item key='1' >
               <Icon type='line-chart'/>
               <span>Charts</span>

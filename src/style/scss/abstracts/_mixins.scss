@@ -1,5 +1,13 @@
+@import "./variables";
+
 @mixin hide {
   position: absolute !important;
   top: -9999px !important;
   left: -9999px !important;
+}
+
+@mixin mobile_container {
+  width: auto;
+  height: auto;
+  margin: 0 $mobile-margin;
 }

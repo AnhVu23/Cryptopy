@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {Form, Input, Tooltip, Icon, Select, Button, DatePicker} from 'antd';
 
+import classes from '../../../style/scss/components/signInForm.scss';
+
 const FormItem = Form.Item;
 const Option = Select.Option;
 
@@ -49,14 +51,12 @@ class SignUpForm extends Component {
     const formItemLayout = {
       labelCol: {
         xs: {
-          span: 22,
-          offset: 1},
+          span: 22},
         sm: {span: 8}
       },
       wrapperCol: {
         xs: {
-          span: 22,
-          offset: 1},
+          span: 22},
         sm: {span: 8}
       }
     };
@@ -64,8 +64,7 @@ class SignUpForm extends Component {
     const tailFormItemLayout = {
       wrapperCol: {
         xs: {
-          span: 22,
-          offset: 1
+          span: 22
         },
         sm: {
           span: 8,
@@ -80,85 +79,88 @@ class SignUpForm extends Component {
       )
     }
     return (
-      <Form onSubmit={this.submitHandler.bind(this)}>
-        <FormItem {...formItemLayout}
-                  label='Email'>
-          {getFieldDecorator('email', {
-            rules: [{
-              type: 'email', message: 'The input is not a valid Email!'
-            }, {
-              required: true, message: 'Please input your Email!'
-            }]
-          })(
-            <Input/>
-          )}
-        </FormItem>
-        <FormItem {...formItemLayout}
-                  label='Password'>
-          {getFieldDecorator('password', {
-            rules: [{
-              required: true, message: 'Please input your password',
-            }, {
-              validator: this.validateToNextPassword
-            }, {
-              min: 6, message: 'Your password must contain at least 6 characters'
-            }]
-          })(
-            <Input type='password'/>
-          )}
-        </FormItem>
-        <FormItem {...formItemLayout}
-                  label='Confirm Password'>
-          {getFieldDecorator('confirm', {
-            rules: [{
-              required: true, message: 'Please confirm your password'
-            }, {
-              validator: this.compareToFirstPassword
-            }]
-          })(<Input type='password' onBlur={this.confirmBlurHandler} />)}
-        </FormItem>
-        <FormItem
-          {...formItemLayout}
-          label={(
-            <span>Nickname&nbsp;
-              <Tooltip>
+      <div className={classes.Container}>
+        <Form onSubmit={this.submitHandler.bind(this)}>
+          <FormItem {...formItemLayout}
+                    label='Email'>
+            {getFieldDecorator('email', {
+              rules: [{
+                type: 'email', message: 'The input is not a valid Email!'
+              }, {
+                required: true, message: 'Please input your Email!'
+              }]
+            })(
+              <Input/>
+            )}
+          </FormItem>
+          <FormItem {...formItemLayout}
+                    label='Password'>
+            {getFieldDecorator('password', {
+              rules: [{
+                required: true, message: 'Please input your password',
+              }, {
+                validator: this.validateToNextPassword
+              }, {
+                min: 6, message: 'Your password must contain at least 6 characters'
+              }]
+            })(
+              <Input type='password'/>
+            )}
+          </FormItem>
+          <FormItem {...formItemLayout}
+                    label='Confirm Password'>
+            {getFieldDecorator('confirm', {
+              rules: [{
+                required: true, message: 'Please confirm your password'
+              }, {
+                validator: this.compareToFirstPassword
+              }]
+            })(<Input type='password' onBlur={this.confirmBlurHandler} />)}
+          </FormItem>
+          <FormItem
+            {...formItemLayout}
+            label={(
+              <span>Nickname&nbsp;
+                <Tooltip>
                   <Icon type='question-circle-o'/>
                 </Tooltip>
               </span>)}>
-          {getFieldDecorator('nickname', {
-            rules: [{
-              required: true, message: 'Please input your nickname!'
-            }]
-          })(
-            <Input/>
-          )}
-        </FormItem>
-        <FormItem
-          {...formItemLayout}
-          label='Birthday'>
-          {getFieldDecorator('birthday', {
-            rules: [{required: true, message: 'You must choose your birthday'
-            }]})(
-            <DatePicker placeholder='Choose your birthday'></DatePicker>
-          )}
+            {getFieldDecorator('nickname', {
+              rules: [{
+                required: true, message: 'Please input your nickname!'
+              }]
+            })(
+              <Input/>
+            )}
+          </FormItem>
+          <FormItem
+            {...formItemLayout}
+            label='Birthday'>
+            {getFieldDecorator('birthday', {
+              rules: [{required: true, message: 'You must choose your birthday'
+              }]})(
+              <DatePicker placeholder='Choose your birthday' style={{width: '100%'}}/>
+            )}
 
-        </FormItem>
-        <FormItem
-          {...formItemLayout}
-          label='Gender'>
-          {getFieldDecorator('gender', {initialValue: 'male'})(
-            <Select>
-              <Option value='male'>Male</Option>
-              <Option value='female'>Female</Option>
-              <Option value='other'>Other</Option>
-            </Select>
-          )}
-          {errorMessage}
-        </FormItem>
-        <FormItem {...tailFormItemLayout}>
-          <Button type='primary'  htmlType='submit'>Register</Button>
-        </FormItem>
-      </Form>
+          </FormItem>
+          <FormItem
+            {...formItemLayout}
+            label='Gender'>
+            {getFieldDecorator('gender', {initialValue: 'male'})(
+              <Select>
+                <Option value='male'>Male</Option>
+                <Option value='female'>Female</Option>
+                <Option value='other'>Other</Option>
+              </Select>
+            )}
+            {errorMessage}
+          </FormItem>
+          <FormItem {...tailFormItemLayout}>
+            <Button type='primary'  htmlType='submit'>Register</Button>
+          </FormItem>
+        </Form>
+      </div>
+
     )
   }
 }
