@@ -1,0 +1,7 @@
+@import "../abstracts/mixins";
+
+.Container {
+  width: auto;
+  height: auto;
+  background-color: $background-color-content;
+}

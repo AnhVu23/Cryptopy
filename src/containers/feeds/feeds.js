@@ -1,16 +1,6 @@
-import React, {Component} from 'react';
+import {connect} from 'react-redux';
 
-import Posts from '../../components/posts';
-import Aux from '../../hocs/react-aux';
+import Feeds from '../../components/feeds';
 
-class Feeds extends Component {
-  render() {
-    return (
-      <Aux>
-        <Posts />
-      </Aux>
-    )
-  }
-}
 
-export default Feeds;
+export default connect(null, null)(Feeds)

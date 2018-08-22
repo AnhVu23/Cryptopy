@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import { List} from 'antd';
 
-import Post from './post/';
+import classes from '../../../style/scss/components/posts.scss'
+import Post from './post/post';
 
 class Posts extends Component {
 
@@ -17,11 +18,14 @@ class Posts extends Component {
         });
       }
       return (
-        <List>
-          {listData.map(post => {
-            return <Post title={post.title} likes='10' comments='20' href={post.href} username={post.description}/>
-          })}
-        </List>
+        <div className={classes.Container}>
+          <List className={classes.Posts}>
+            {listData.map(post => {
+              return <Post title={post.title} likes='10' comments='20' href={post.href} username={post.description}/>
+            })}
+          </List>
+        </div>
+
       )
     }
 }

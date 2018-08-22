@@ -1,7 +1,5 @@
 @import "../abstracts/mixins";
 
-@media only screen and (max-width: 575px) {
-  .Container {
-    @include mobile_container
-  }
+.Container {
+  @include container
 }
