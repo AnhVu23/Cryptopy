@@ -1,7 +1,14 @@
 @import "../abstracts/mixins";
 
+
 .Container {
   width: auto;
   height: auto;
   background-color: $background-color-content;
+}
+
+@media only screen and (min-width: 972px) {
+  .Card {
+    margin-top: $feeds-margin-top;
+  }
 }
