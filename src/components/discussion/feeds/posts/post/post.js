@@ -1,7 +1,7 @@
 import React from 'react';
 import { List, Icon} from 'antd';
 
-import classes from '../../../../style/scss/components/post.scss'
+import classes from '../../../../../style/scss/components/post.scss'
 const post = (props) => {
   const IconText = ({ type, text }) => (
     <span>

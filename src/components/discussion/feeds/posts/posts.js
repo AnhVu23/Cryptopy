@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import { List} from 'antd';
 
-import classes from '../../../style/scss/components/posts.scss'
+import classes from '../../../../style/scss/components/posts.scss'
 import Post from './post/post';
-
+import Aux from '../../../../hocs/react-aux/react-aux'
 class Posts extends Component {
 
     render() {
@@ -18,13 +18,13 @@ class Posts extends Component {
         });
       }
       return (
-        <div className={classes.Container}>
+        <Aux>
           <List className={classes.Posts}>
             {listData.map(post => {
               return <Post title={post.title} likes='10' comments='20' href={post.href} username={post.description}/>
             })}
           </List>
-        </div>
+        </Aux>
 
       )
     }

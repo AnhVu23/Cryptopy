@@ -7,8 +7,9 @@
   background-color: $background-color-content;
 }
 
-@media only screen and (min-width: 972px) {
-  .Card {
-    margin-top: $feeds-margin-top;
+@media only screen and (min-width: 992px) {
+  .InnerContainer {
+    position: relative;
+    top: $feeds-margin-top;
   }
 }
