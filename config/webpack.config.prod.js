@@ -267,6 +267,22 @@ module.exports = {
             ],
           },
           {
+            test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
+            use: "url-loader?limit=10000&mimetype=application/font-woff"
+          }, {
+            test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,
+            use: "url-loader?limit=10000&mimetype=application/font-woff"
+          }, {
+            test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
+            use: "url-loader?limit=10000&mimetype=application/octet-stream"
+          }, {
+            test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
+            use: "file-loader"
+          }, {
+            test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+            use: "url-loader?limit=10000&mimetype=image/svg+xml"
+          },
+          {
             test: /\.less$/,
             use: [
               {loader: "style-loader"},
@@ -391,6 +407,10 @@ module.exports = {
       navigateFallbackWhitelist: [/^(?!\/__).*/],
       // Don't precache sourcemaps (they're large) and build asset manifest:
       staticFileGlobsIgnorePatterns: [/\.map$/, /asset-manifest\.json$/],
+    }),
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery'
     }),
     // Moment.js is an extremely popular library that bundles large locale files
     // by default due to how Webpack interprets its code. This is a practical

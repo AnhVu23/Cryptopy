@@ -9,5 +9,5 @@
 @mixin container {
   width: auto;
   height: auto;
-  padding: 0 $container_padding;
+  padding: $container_padding;
 }

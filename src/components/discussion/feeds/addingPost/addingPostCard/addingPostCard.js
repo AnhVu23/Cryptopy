@@ -1,8 +1,10 @@
 import React from 'react';
-import {Card} from 'antd';
+import {Card, Button} from 'antd';
 const addingPostCard = (props) => {
   return (
-      <Card title='Create a new post'>New Post</Card>
+      <Card title='Create a new post'>
+        <Button type='primary'>CREATE POST</Button>
+      </Card>
   )
 };
 
