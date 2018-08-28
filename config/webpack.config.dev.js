@@ -240,6 +240,22 @@ module.exports = {
             ],
           },
           {
+            test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
+            use: "url-loader?limit=10000&mimetype=application/font-woff"
+          }, {
+            test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,
+            use: "url-loader?limit=10000&mimetype=application/font-woff"
+          }, {
+            test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
+            use: "url-loader?limit=10000&mimetype=application/octet-stream"
+          }, {
+            test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
+            use: "file-loader"
+          }, {
+            test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+            use: "url-loader?limit=10000&mimetype=image/svg+xml"
+          },
+          {
             test: /\.less$/,
             use: [
               {loader: "style-loader"},
@@ -308,6 +324,10 @@ module.exports = {
     // solution that requires the user to opt into importing specific locales.
     // https://github.com/jmblog/how-to-optimize-momentjs-with-webpack
     // You can remove this if you don't use Moment.js:
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery'
+    }),
     new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
   ],
   // Some libraries import Node modules but don't use them in the browser.

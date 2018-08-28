@@ -44,7 +44,7 @@ const sideDrawer = (props) => {
             <Menu.Item key='discussion'>
               <Icon type='team'/>
               <span>Discussion</span>
-              <Link to='/forum'/>
+              <Link to='/discussion'/>
             </Menu.Item>
             {props.isAuthenticated ? null : signInNav}
             {props.isAuthenticated ? signOutNav : signUpNav}

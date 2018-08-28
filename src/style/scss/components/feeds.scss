@@ -1,0 +1,15 @@
+@import "../abstracts/mixins";
+
+
+.Container {
+  width: auto;
+  height: auto;
+  background-color: $background-color-content;
+}
+
+@media only screen and (min-width: 992px) {
+  .InnerContainer {
+    position: relative;
+    top: $feeds-margin-top;
+  }
+}

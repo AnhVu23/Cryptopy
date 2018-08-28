@@ -6,8 +6,8 @@
   left: -9999px !important;
 }
 
-@mixin mobile_container {
+@mixin container {
   width: auto;
   height: auto;
-  margin: 0 $mobile-margin;
+  padding: $container_padding;
 }
