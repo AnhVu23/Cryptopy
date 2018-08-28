@@ -23,7 +23,7 @@ const navigationItems = (props) => {
           <Search/>
       </div>
       <ul className={classes.NavRight}>
-        <NavigationItem link='/forum' exact>Discussion</NavigationItem>
+        <NavigationItem link='/discussion' exact>Discussion</NavigationItem>
         <NavigationItem link='/charts'>Charts</NavigationItem>
         {authNav}
       </ul>

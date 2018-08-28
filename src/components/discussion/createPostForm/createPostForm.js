@@ -1,18 +1,10 @@
 import React, {Component} from 'react';
 import {Input, Button, Form} from 'antd';
-import 'froala-editor/js/froala_editor.pkgd.min';
-import 'froala-editor/css/froala_style.min.css';
-import 'froala-editor/css/froala_editor.pkgd.min.css';
-import 'font-awesome/css/font-awesome.css';
-import FroalaEditor from 'react-froala-wysiwyg';
-import $ from 'jquery';
+import WysiwigEdtior from './wysiwyg';
 
 const FormItem = Form.Item;
-
 class CreatePostForm extends Component {
-  componentDidMount() {
-    $.FroalaEditor.
-  }
+
   onSubmitHandler(e) {
     e.preventDefault();
   }
@@ -21,7 +13,7 @@ class CreatePostForm extends Component {
 
   }
   render() {
-    const {getFieldDecorator} = this.props.form;
+    const { getFieldDecorator } = this.props.form;
     const formItemLayout = {
       wrapperCol: {
         span: 22
@@ -34,9 +26,9 @@ class CreatePostForm extends Component {
     };
     return (
       <div>
-        <Form onSubmit={this.onSubmitHandler}>
+        <Form onSubmit={this.onSubmitHandler.bind(this)}>
           <FormItem {...formItemLayout}>
-            {...getFieldDecorator('title', {
+            {getFieldDecorator('title', {
               rules: [{
                 required: true, message: 'Please add the title'
               }]
@@ -45,7 +37,10 @@ class CreatePostForm extends Component {
             )}
           </FormItem>
           <FormItem {...formItemLayout}>
-            {...getFieldDecorator('content', {
+            <WysiwigEdtior/>
+          </FormItem>
+          <FormItem {...formItemLayout}>
+            {getFieldDecorator('content', {
               required: true, message: 'Please type something'
             })(
               <Input placeholder='Content'/>
@@ -61,4 +56,5 @@ class CreatePostForm extends Component {
   }
 }
 
-export default createPostForm
+const WrappedCreatePost = Form.create()(CreatePostForm);
+export default WrappedCreatePost
