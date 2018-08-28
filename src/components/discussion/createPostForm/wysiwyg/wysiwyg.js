@@ -4,19 +4,17 @@ import 'froala-editor/css/froala_style.min.css';
 import 'froala-editor/css/froala_editor.pkgd.min.css';
 import 'font-awesome/css/font-awesome.css';
 import FroalaEditor from 'react-froala-wysiwyg';
-import * as $ from 'jquery';
-
+import {Input} from 'antd';
 class wysiwyg extends Component {
   config = {
-    toolbarInline: true,
     charCounterCount: false,
-    toolbarButtons: ['bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript', '-', 'paragraphFormat', 'align', 'formatOL', 'formatUL', 'indent', 'outdent', '-', 'insertImage', 'insertLink', 'insertFile', 'insertVideo', 'undo', 'redo'],
+    toolbarButtons: ['bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript', '-', 'paragraphFormat', 'align', 'formatOL', 'formatUL', 'emoticon', '-', 'insertImage', 'insertLink', 'insertFile', 'insertVideo', 'undo', 'redo'],
     toolbarVisibleWithoutSelection: true
   };
   constructor() {
     super();
     this.state = {
-      model: 'Edit text'
+      model: 'Type Something'
     }
   }
 
@@ -27,15 +25,15 @@ class wysiwyg extends Component {
   };
 
   render() {
+    const {TextArea} = Input;
     return (
-      <FroalaEditor model={this.state.model}
+      <FroalaEditor tag='textarea'
+                    model={this.state.model}
                     onModelChange={this.handleModelChange.bind(this)}
-                    toolbarInline={true}
-                    charCounterCount={false}
-                    toolbarButtons={ ['bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript', '-', 'paragraphFormat', 'align',
-                      'formatOL', 'formatUL', 'indent', 'outdent', '-', 'insertImage', 'insertLink', 'insertFile', 'insertVideo', 'undo', 'redo']}
-                    toolbarVisibleWithoutSelection={true}
-                    config={this.config}/>
+                    config={this.config}
+      >
+        <TextArea value={this.state.model}/>
+      </FroalaEditor>
     )
   }
 }

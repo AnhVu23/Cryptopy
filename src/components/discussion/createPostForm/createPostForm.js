@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
-import {Input, Button, Form} from 'antd';
-import WysiwigEdtior from './wysiwyg';
+import {Input, Button, Form, Row, Col} from 'antd';
 
+import WysiwigEdtior from './wysiwyg';
+import classes from '../../../style/scss/components/createPost.scss';
 const FormItem = Form.Item;
 class CreatePostForm extends Component {
 
@@ -16,16 +17,12 @@ class CreatePostForm extends Component {
     const { getFieldDecorator } = this.props.form;
     const formItemLayout = {
       wrapperCol: {
-        span: 22
-      }
-    };
-    const tailFormItemLayout = {
-      wrapperCol: {
-        span: 4
+        offset: 2,
+        span: 20
       }
     };
     return (
-      <div>
+      <div className={classes.Container}>
         <Form onSubmit={this.onSubmitHandler.bind(this)}>
           <FormItem {...formItemLayout}>
             {getFieldDecorator('title', {
@@ -37,18 +34,30 @@ class CreatePostForm extends Component {
             )}
           </FormItem>
           <FormItem {...formItemLayout}>
-            <WysiwigEdtior/>
-          </FormItem>
-          <FormItem {...formItemLayout}>
             {getFieldDecorator('content', {
               required: true, message: 'Please type something'
             })(
-              <Input placeholder='Content'/>
+              <WysiwigEdtior/>
               )}
           </FormItem>
-          <FormItem {...tailFormItemLayout}>
-            <Button type='danger' htmlType='button' onClick={this.onCancelHandler}>Cancel</Button>
-            <Button type='primary' htmlType='submit'>Submit</Button>
+          <FormItem>
+            <Row>
+              <Col span={17}/>
+              <Col span={2}>
+                <Button type='danger'
+                        htmlType='button'
+                        onClick={this.onCancelHandler}
+                        style={{width: '100%'}}>Cancel</Button>
+              </Col>
+              <Col span={1}/>
+              <Col span={2}>
+                <Button type='primary'
+                        style={{width: '100%'}}
+                        htmlType='submit'
+                        >Submit</Button>
+              </Col>
+            </Row>
+
           </FormItem>
         </Form>
       </div>

@@ -5,7 +5,9 @@ import classes from '../../../../../style/scss/components/addingPostToggle.scss'
 const addingPostToggle = (props) => {
   return (
     <div className={classes.MobileToggle}>
-      <Button type='primary' icon='plus'/>
+      <Button type='primary'
+              icon='plus'
+              onClick={props.clicked}/>
     </div>
   )
 };

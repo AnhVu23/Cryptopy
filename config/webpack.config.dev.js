@@ -172,8 +172,6 @@ module.exports = {
                 loader: require.resolve('css-loader'),
                 options: {
                   importLoaders: 1,
-                  modules: true,
-                  localIndentName: '[name]_[local]_[hash:base64:5]'
                 },
               },
               {
@@ -240,6 +238,20 @@ module.exports = {
             ],
           },
           {
+            test: /\.less$/,
+            use: [
+              {loader: "style-loader"},
+              {loader: "css-loader"},
+              {loader: "less-loader",
+                options: {
+                  javascriptEnabled: true,
+                  modifyVars: themeVariables,
+                  root: path.resolve(__dirname, './')
+                }
+              }
+            ]
+          },
+          {
             test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
             use: "url-loader?limit=10000&mimetype=application/font-woff"
           }, {
@@ -255,21 +267,6 @@ module.exports = {
             test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
             use: "url-loader?limit=10000&mimetype=image/svg+xml"
           },
-          {
-            test: /\.less$/,
-            use: [
-              {loader: "style-loader"},
-              {loader: "css-loader"},
-              {loader: "less-loader",
-                options: {
-                  javascriptEnabled: true,
-                  modifyVars: themeVariables,
-                  root: path.resolve(__dirname, './')
-                }
-              }
-            ]
-          },
-
           // "file" loader makes sure those assets get served by WebpackDevServer.
           // When you `import` an asset, you get its (virtual) filename.
           // In production, they would get copied to the `build` folder.
@@ -324,11 +321,11 @@ module.exports = {
     // solution that requires the user to opt into importing specific locales.
     // https://github.com/jmblog/how-to-optimize-momentjs-with-webpack
     // You can remove this if you don't use Moment.js:
+    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery'
     }),
-    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
   ],
   // Some libraries import Node modules but don't use them in the browser.
   // Tell Webpack to provide empty mocks for them so importing them works.
