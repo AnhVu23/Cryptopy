@@ -17,8 +17,9 @@ class CreatePostForm extends Component {
     const { getFieldDecorator } = this.props.form;
     const formItemLayout = {
       wrapperCol: {
-        offset: 2,
-        span: 20
+        xs: {
+          span: 22},
+        sm: {offset: 2, span: 20}
       }
     };
     return (
@@ -41,23 +42,21 @@ class CreatePostForm extends Component {
               )}
           </FormItem>
           <FormItem>
-            <Row>
-              <Col span={17}/>
-              <Col span={2}>
+            <Row gutter={{xs: 8, sm: 16, lg: 24}}>
+              <Col lg={18} sm={14} xs={12}/>
+              <Col lg={2} sm={4} xs={6}>
                 <Button type='danger'
                         htmlType='button'
                         onClick={this.onCancelHandler}
                         style={{width: '100%'}}>Cancel</Button>
               </Col>
-              <Col span={1}/>
-              <Col span={2}>
+              <Col lg={2} sm={4} xs={6}>
                 <Button type='primary'
                         style={{width: '100%'}}
                         htmlType='submit'
                         >Submit</Button>
               </Col>
             </Row>
-
           </FormItem>
         </Form>
       </div>

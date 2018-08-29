@@ -7,14 +7,15 @@ import FroalaEditor from 'react-froala-wysiwyg';
 import {Input} from 'antd';
 class wysiwyg extends Component {
   config = {
-    charCounterCount: false,
-    toolbarButtons: ['bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript', '-', 'paragraphFormat', 'align', 'formatOL', 'formatUL', 'emoticon', '-', 'insertImage', 'insertLink', 'insertFile', 'insertVideo', 'undo', 'redo'],
-    toolbarVisibleWithoutSelection: true
+    toolbarButtons: ['bold', 'italic', 'underline', 'strikeThrough', 'subscript', 'superscript', 'paragraphFormat', 'align', 'formatOL', 'formatUL', 'insertImage', 'insertLink', 'insertFile', 'insertVideo', 'undo', 'redo'],
+    toolbarButtonsSM: ['bold', 'italic', 'underline', 'strikeThrough', 'paragraphFormat', 'align', 'insertImage', 'insertLink', 'insertFile', 'insertVideo', 'undo', 'redo'],
+    toolbarButtonsXS: ['bold', 'italic', 'underline', 'insertImage', 'insertLink', 'insertFile', 'insertVideo'],
+    charCounterCount: false
   };
   constructor() {
     super();
     this.state = {
-      model: 'Type Something'
+      model: ''
     }
   }
 
@@ -27,8 +28,7 @@ class wysiwyg extends Component {
   render() {
     const {TextArea} = Input;
     return (
-      <FroalaEditor tag='textarea'
-                    model={this.state.model}
+      <FroalaEditor model={this.state.model}
                     onModelChange={this.handleModelChange.bind(this)}
                     config={this.config}
       >
